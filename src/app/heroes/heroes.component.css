@@ -1,0 +1,81 @@
+/* ROLES SELECTION MENU */
+
+#role-selection-menu {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 200%;
+    color: white;
+    margin: auto;
+    
+    width: fit-content;
+    margin-bottom: 1%;
+    background-color:lightblue;
+}
+
+#role-selection-menu > div {
+    padding: 10px;
+}
+
+#role-selection-menu > div:hover {
+    background-color:dodgerblue;
+    cursor: pointer;
+}
+
+.active-filter {
+    background-color:dodgerblue;
+}
+
+/* HEROES LIST */
+
+#heroes-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 80%;
+    font-size: 170%;
+    gap: 10px;
+}
+
+/* HERO PORTRAIT */
+
+.hero-portrait {
+    border-radius: 5%;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: transform 180ms ease-in-out;
+}
+
+.hero-portrait:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+    z-index: 999;
+    background-color: white;
+}
+
+.hero-portrait:hover > .hero-name {
+    background-color: white;
+    color: black;
+}
+
+.hero-name {
+    position: absolute;
+    color:darkgrey;
+    background-color: darkslateblue;
+    position: absolute;
+    z-index: 998;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: 0%;
+    opacity: 0.9;
+}
+
+img {
+    height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+}

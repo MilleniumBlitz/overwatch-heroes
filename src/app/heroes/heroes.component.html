@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="toto">
+        <h1 class="title">LISTE DES HEROS</h1>
+
+        <!-- ROLES SELECTION -->
+        <div id="role-selection-menu">
+            <div *ngFor="let filter of filters" (click)="filterHeroesByRole(filter.key)" [ngClass]="{'active-filter': filter.is_active}">{{filter.key}}</div>
+        </div>
+    </div>
+
+    <!-- HERO LIST -->
+    <div id="heroes-list" [@listAnimation]="filteredHeroes.length">
+        <div *ngFor="let hero of filteredHeroes" class="hero-portrait" (click)="onSelect(hero)">
+            <img src="{{hero.portrait}}">
+            <div class="hero-name"><p >{{hero.name | uppercase}}</p></div>
+        </div>
+    </div>
+</div>

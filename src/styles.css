@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+.container {
+    font-family: bignoodletitling;
+    text-align: center;
+}
+
+.title {
+    font-size: 600%;
+    display: inline-block;
+    color: white;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, white 50%, #00000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+
+body {
+    background: no-repeat center/100% url("assets/hero_bg.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+@font-face {
+    font-family: 'bignoodletitling';
+    src: url('assets/fonts/big_noodle_titling_oblique.ttf')  format('truetype');
+    font-weight: bold;
+}
