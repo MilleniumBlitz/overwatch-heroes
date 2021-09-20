@@ -41,13 +41,6 @@ export class HeroesComponent implements OnInit {
     {key: role_support, is_active: false}
   ]
 
-   /* filters: {[key: string]: boolean} = {
-    role_tank: false,
-    role_dps: false,
-    role_support: false,
-    "": false
-  } */
-
   constructor(
     private router: Router,
     private heroService: HeroService) { }
@@ -60,12 +53,8 @@ export class HeroesComponent implements OnInit {
     this.heroService.getHeroes().
       subscribe(heroes => {
         this.heroes = heroes, 
-        this.filterHeroesByRole("all")
+        this.filterHeroesByRole(role_all)
       })
-  }
-
-  showAll() {
-    this.filteredHeroes = this.heroes
   }
 
   filterHeroesByRole(role: string) {
@@ -76,12 +65,11 @@ export class HeroesComponent implements OnInit {
       else (filter.is_active = false)
     }
 
-    /* this.filters.find(i => i.key == role)!.is_active = true */
-    if (role != "all") {
+    if (role != role_all) {
       this.filteredHeroes = this.heroes.filter(x => x.role == role)
     }
     else {
-      this.showAll()
+      this.filteredHeroes = this.heroes
     }
   }
 
